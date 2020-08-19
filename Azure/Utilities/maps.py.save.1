@@ -1,0 +1,91 @@
+Maps = {
+    "DataSources": {
+        "list": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/dataSources",
+            "query": """{{
+                "$filter": {filter},
+                "api-version": {api_version},
+                "$skiptoken": {skiptoken}
+            }}"""
+        }
+    },
+    "Azure.LogAnalytics.Workspaces.Workspaces": {
+        "available_service_tiers": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/availableServiceTiers",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "clusters": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/clusters",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "data_exports": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/dataExports",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "data_sources": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/dataSources",
+            "query": """{{
+                "$filter": {filter},
+                "api-version": {api_version},
+                "$skiptoken": {skiptoken}
+            }}"""
+        },
+        "deleted": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/deletedWorkspaces",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "get": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "list": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/providers/Microsoft.OperationalInsights/workspaces",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "list_by_resource_group": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "management_groups": {
+            "method": "GET",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/managementGroups",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        },
+        "metadata": {
+            "method": "GET",
+            "url": "https://api.loganalytics.io/v1/workspaces/{workspace_id}/metadata"
+        },
+        "schema": {
+            "method": "POST",
+            "url": "https://management.azure.com/subscriptions/{subscription_id}/resourcegroups/{resource_group_name}/providers/Microsoft.OperationalInsights/workspaces/{workspace_name}/schema",
+            "query": """{{
+                "api-version": {api_version}
+            }}"""
+        }
+    }
+}

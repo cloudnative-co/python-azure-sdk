@@ -1,0 +1,12 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Resources:
+  SlackSDK:
+    Type: AWS::Serverless::LayerVersion
+    Properties:
+      LayerName: Azure
+      Description: Azure SDK for Python 3.6
+      ContentUri: lib
+      RetentionPolicy: Retain
+      CompatibleRuntimes:
+        - python3.6
