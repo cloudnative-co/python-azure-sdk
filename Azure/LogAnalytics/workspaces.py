@@ -2,6 +2,7 @@
 # import module snippets
 from ..base import Base
 from ..Utilities.utilities import request_parameter
+from .collector import Collector
 
 
 class Workspaces(Base):
@@ -84,7 +85,7 @@ class Workspaces(Base):
         workspace_name: str, api_version: str = "2020-03-01-preview"
     ):
         """
-        ワークスペースの共有キーを取得します。
+        ワークスペースの共有キーを再取得します。
         """
         request = request_parameter(locals())
         return self.http_request(**request)
@@ -98,3 +99,14 @@ class Workspaces(Base):
         """
         request = request_parameter(locals())
         return self.http_request(**request)
+
+    def collector(
+        self, resource_group_name: str, subscription_id: str,
+        workspace_name: str
+    ):
+        ws_info = self.get(resource_group_name, subscription_id, workspace_name)
+        ky_info = self.shared_key(resource_group_name, subscription_id, workspace_name)
+        workspace_id = ws_info["properties"]["customerId"]
+        shared_key = ky_info["primarySharedKey"]
+        collector = Collector(workspace_id, shared_key)
+        return collector
